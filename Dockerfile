@@ -1,10 +1,10 @@
-FROM ubuntu
+FROM ubuntu:24.04
 
 RUN apt update -y && apt upgrade -y
 
-RUN apt install libfl-dev -y
-RUN apt install zlib1g-dev -y
-RUN apt install curl -y
+RUN apt install libfl-dev zlib1g-dev curl -y
+
+RUN rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work-dir
 
