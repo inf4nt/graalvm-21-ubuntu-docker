@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:22.04
 
 RUN apt update -y && apt upgrade -y
 
@@ -12,5 +12,4 @@ RUN tar -xzf /opt/graalvm-jdk-21_linux-x64_bin.tar.gz -C /opt/ && \
 RUN GRAALVM_HOME=$(find /opt/ -type d -name 'graalvm-jdk-21*' -printf "%p" -quit) && \
     echo JAVA_HOME=$GRAALVM_HOME >> ~/.bashrc && \
     echo PATH=$GRAALVM_HOME/bin:$PATH >> ~/.bashrc && \
-    echo export JAVA_HOME=$GRAALVM_HOME >> ~/.bashrc && \
-    echo export PATH=$GRAALVM_HOME/bin:$PATH >> ~/.bashrc
+    echo export JAVA_HOME=$GRAALVM_HOME >> ~/.bashrc
